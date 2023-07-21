@@ -10,23 +10,24 @@ displayErrorMotionToast(
   String description,
 ) {
   MotionToast(
-    description: Center(
-      child: Text(
-        description,
-        textAlign: TextAlign.center,
-        style: mediumtextStyle(14, colorWhite),
+    description: Padding(
+      padding: const EdgeInsets.only(top: 5, bottom: 5),
+      child: Center(
+        child: Text(
+          description,
+          textAlign: TextAlign.center,
+          style: boldtextStyle(14, colorWhite),
+        ),
       ),
     ),
     primaryColor: errorColor,
     iconSize: 28,
     displaySideBar: false,
     enableAnimation: false,
-    animationType: AnimationType.fromLeft,
-    position: MotionToastPosition.top,
+    borderRadius: 50,
     backgroundType: BackgroundType.solid,
     animationCurve: Curves.easeOutExpo,
-    width: 250,
-    height: 45,
+    padding: const EdgeInsets.only(left: 70, right: 70),
     dismissable: false,
   ).show(context);
 }
@@ -34,50 +35,54 @@ displayErrorMotionToast(
 displaySuccessMotionToast(BuildContext context, String description,
     {Function? onClose}) {
   MotionToast(
-    description: Center(
-      child: Text(
-        description,
-        textAlign: TextAlign.center,
-        style: mediumtextStyle(14, colorWhite),
+    description: Padding(
+      padding: const EdgeInsets.only(top: 5, bottom: 5),
+      child: Center(
+        child: Text(
+          description,
+          textAlign: TextAlign.center,
+          style: boldtextStyle(14, colorWhite),
+        ),
       ),
     ),
     primaryColor: successColor,
     iconSize: 28,
     displaySideBar: false,
     enableAnimation: false,
-    animationType: AnimationType.fromLeft,
-    position: MotionToastPosition.top,
+    borderRadius: 50,
     backgroundType: BackgroundType.solid,
     animationCurve: Curves.easeOutExpo,
-    width: 250,
-    height: 45,
+    padding: const EdgeInsets.only(left: 70, right: 70),
     dismissable: false,
     onClose: onClose,
   ).show(context);
 }
 
-displayWarningMotionToast(
+displayInfoMotionToast(
   BuildContext context,
   String description,
 ) {
   MotionToast(
-    description: Center(
-      child: Text(
-        description,
-        textAlign: TextAlign.center,
-        style: semiboldtextStyle(14),
+    description: Padding(
+      padding: const EdgeInsets.only(top: 5, bottom: 5),
+      child: Center(
+        child: Text(
+          description,
+          textAlign: TextAlign.center,
+          style: boldtextStyle(14),
+        ),
       ),
     ),
     primaryColor: const Color(0xFFDADADA),
     iconSize: 28,
     displaySideBar: false,
     enableAnimation: false,
-    animationType: AnimationType.fromLeft,
-    position: MotionToastPosition.top,
+    borderRadius: 50,
+    position: MotionToastPosition.center,
     backgroundType: BackgroundType.solid,
-    animationCurve: Curves.easeOutExpo,
-    width: 250,
-    height: 45,
+    animationDuration: const Duration(seconds: 2),
+    animationCurve: Curves.easeInOut,
+    padding: const EdgeInsets.only(left: 70, right: 70),
     dismissable: false,
   ).show(context);
 }

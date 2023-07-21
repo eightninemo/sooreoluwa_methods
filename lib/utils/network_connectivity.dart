@@ -28,8 +28,7 @@ class NetworkConnectivity {
         hasInternet = status == InternetConnectionStatus.connected;
         hasInternet
             ? print("Internet connection is active.")
-            : displayWarningMotionToast(
-                context, "Check your network connection.");
+            : displayInfoMotionToast(context, "Check your network connection.");
       },
     );
   }

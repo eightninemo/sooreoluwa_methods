@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:iwrotethem/utils/network_connectivity.dart';
 
 SizedBox heightTen = const SizedBox(height: 10);
 
@@ -17,6 +18,9 @@ SizedBox widthTen = const SizedBox(width: 10);
 SizedBox widthfifteen = const SizedBox(width: 15);
 
 Placeholder constantPlaceHolder = const Placeholder(fallbackHeight: 200);
+
+// initialize network connection
+NetworkConnectivity networkConnectivity = NetworkConnectivity.instance;
 
 EdgeInsets leftWithRightOrTopOrBottom(
         {double? right, double? top, double? bottom}) =>

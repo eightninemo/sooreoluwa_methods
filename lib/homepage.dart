@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:iwrotethem/secondpage.dart';
-import 'package:iwrotethem/utils/bottom_sheet.dart';
+// import 'package:iwrotethem/utils/bottom_sheet.dart';
 import 'package:iwrotethem/utils/constant.dart';
 import 'package:iwrotethem/utils/navigation.dart';
 import 'package:iwrotethem/utils/button.dart';
 import 'package:iwrotethem/utils/colors.dart';
+import 'package:iwrotethem/utils/toast.dart';
 
 class HomePage extends StatefulWidget {
   static const id = 'home';
@@ -17,6 +18,7 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
+    networkConnectivity.initialise(context);
     return Scaffold(
       body: SafeArea(
         child: Padding(
@@ -28,8 +30,10 @@ class _HomePageState extends State<HomePage> {
                 context,
                 width: 250,
                 bgColor: colorBlack,
-                // onTap: () => pushNamed(context, 'second'),
-                onTap: () => showModal(context, const SecondPage()),
+                onTap: () => displaySuccessMotionToast(
+                    context, 'Hello Hello Hello World'),
+                // onTap: () => pushReplacementTo(context, const SecondPage()),
+                // onTap: () => showModal(context, const SecondPage()),
                 title: 'Go to Second Page',
                 height: 50,
                 radius: 12,
